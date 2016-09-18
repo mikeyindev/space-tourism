@@ -20,8 +20,10 @@
 
       {{#each featured}}
       <!-- Loop through each of the featured product defined in products.js -->
+      <!-- 'featured' helper method is defined in index.js-->
         {{> productTile this}}
-        <!-- 'this' is scoped to the item in the each loop -->
+        <!-- 'this' is scoped to the item in the each loop. It's passed to the
+        productTile.html partial in /_partials -->
 
       {{/each}}
       <!-- End of each loop -->

@@ -16,18 +16,28 @@
         <li class="active"><a href="{{pathFor 'homeIndex'}}">Home</a></li>
         <li><a href="{{pathFor 'homeAbout'}}">About</a></li>
         <li><a href="{{pathFor 'homeContact'}}">Contact</a></li>
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"></a>
+          <ul class="dropdown-menu" role="menu">
+            {{#each vendors}}
+              <!-- Running the 'vendors' template helper defined in nav.js -->
+              <!-- The #each block sets the data context -->
+              <li><a href="{{pathFor 'vendorsShow'}}">{{name}}</a></li>
+            {{/each}}
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <!-- Enabled by the package alanning:roles-->
-          {{#if isInRole 'admin'}}
-            <a href="#">Amind</a>
+          <!-- Enabled by the package 'alanning:roles'. The role
+          'Administrator' is set through MongoDB, see Meteor.js note
+          in Evernote-->
+          {{#if isInRole 'Administrator'}}
+            <a href="#">You are Admin</a>
           {{/if}}
         </li>
         <!-- Enabled by the package ian:accounts-ui-bootstrap-3 -->
-        <li>
           {{> loginButtons}}
-        </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
