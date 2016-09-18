@@ -24,3 +24,8 @@ twbs:bootstrap
 iron:router
 pcel:loading
 benjick:stripe-native
+ian:accounts-ui-bootstrap-3
+accounts-password
+accounts-github
+accounts-google
+alanning:roles

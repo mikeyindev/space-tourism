@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
+    "bcrypt": "^0.8.7",
     "knockout": "^3.4.0",
     "meteor-node-stubs": "~0.2.0",
     "moment": "^2.15.0",

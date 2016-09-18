@@ -17,6 +17,18 @@
         <li><a href="{{pathFor 'homeAbout'}}">About</a></li>
         <li><a href="{{pathFor 'homeContact'}}">Contact</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <!-- Enabled by the package alanning:roles-->
+          {{#if isInRole 'admin'}}
+            <a href="#">Amind</a>
+          {{/if}}
+        </li>
+        <!-- Enabled by the package ian:accounts-ui-bootstrap-3 -->
+        <li>
+          {{> loginButtons}}
+        </li>
+      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
