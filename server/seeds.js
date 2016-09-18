@@ -215,7 +215,7 @@ if(Vendors.find().count() === 0) {
         }
     ];
 
-    _each(vendors, function (vendor) {
+    _.each(vendors, function (vendor) {
         Vendors.insert(vendor);
         console.log("Added ", vendor.name);
     });
