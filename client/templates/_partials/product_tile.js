@@ -1,6 +1,6 @@
-Template.productsShow.events({
+Template.productTile.events({
     // on click add-to-cart event
-    "click #add-to-cart" : function (ev) {
+    "click .add-to-cart" : function (ev) {
         ev.preventDefault();
         // Default navigates the page, so we prevent it
 
