@@ -5,8 +5,7 @@ Template.productsShow.events({
         // Default navigates the page, so we prevent it
 
         addToCart(this.sku, function (err, res) {
-            console.log(err);
-            console.log(res);
+            Router.go("cartShow");
         });
     }
 });
