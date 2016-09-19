@@ -35,3 +35,9 @@ The technologies used include:
 * Finally, install `bcrypt` by running `meteor npm install --save bcrypt`.
 * You can configure GitHub and Google Client ID after starting the server by running `meteor` and clicking on the _Sign in / Join_ button.
 [alanning:roles](https://atmospherejs.com/alanning/roles) - Authorization package for Meteor for attaching permissions to users.
+
+## Testing
+
+[practicalmeteor:mocha](https://atmospherejs.com/practicalmeteor/mocha) - The recommended package for writing mocha tests for meteor code. `Velocity` framework is no longer supported by Meteor. Don't forget to install `practicalmeteor:chai`!
+* Create a `/test` directory under `/server` and one under `/client`
+* Run `meteor test --full-app --driver-package=practicalmeteor:mocha` to test all `*.app-test.*` and `*.app-spec.*` files

@@ -28,3 +28,5 @@ accounts-password
 accounts-github
 accounts-google
 alanning:roles
+practicalmeteor:mocha
+practicalmeteor:chai
