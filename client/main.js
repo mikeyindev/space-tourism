@@ -1,5 +1,5 @@
-import accounting from 'accounting';
-import showdown from 'showdown';
+const accounting = require('accounting');
+const showdown = require('showdown');
 
 // Helper method using accounting.js to format currency
 UI.registerHelper("money", function (amount) {

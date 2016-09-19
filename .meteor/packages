@@ -21,7 +21,6 @@ shell-server@0.2.1            # Server-side component of the `meteor shell` comm
 twbs:bootstrap
 iron:router
 pcel:loading
-benjick:stripe-native
 ian:accounts-ui-bootstrap-3
 accounts-password
 accounts-github
@@ -30,3 +29,9 @@ alanning:roles
 practicalmeteor:mocha
 practicalmeteor:chai
 autopublish
+juliancwirko:s-alert
+meteorhacks:npm
+
+
+npm-container
+mrgalaxy:stripe

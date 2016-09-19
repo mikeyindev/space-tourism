@@ -17,7 +17,7 @@ Template.cartShow.events({
                 console.log(err);
             }
             else {
-                if(res.items.length === 0) {
+                if(currentCart.items.length === 0) {
                     // If no more items in the cart, redirect to the home page
                     Router.go("homeIndex")
                 }
@@ -26,23 +26,34 @@ Template.cartShow.events({
     },
 
     "change .item-qty" : function (ev) {
-        var newQty = parseInt($(ev.currentTarget).val());
-        var name = this.name;
-        if(newQty === 0) {
-            removeFromCart(this.sku);
+
+        var rawValue = $(ev.currentTarget).val();
+
+        if(!isNaN(rawValue)) {
+            var newQty = parseInt(rawValue);
+            var name = this.name;
+            if (newQty === 0) {
+                removeFromCart(this.sku);
+            }
+            else {
+                this.quantity = parseInt(newQty);
+                saveCart(currentCart, function (err, res) {
+                    if (err) {
+                        // Using 'juliancwirko:s-alert' package for
+                        // notifications
+                        //sAlert.error(err.message);
+                        console.log(err);
+                    }
+                    else {
+                        sAlert.success(name + " updated");
+                    }
+                });
+
+                $(ev.currentTarget).val(newQty);
+            }
         }
         else {
-            this.quantity = parseInt(newQty);
-            saveCart(currentCart, function (err, res) {
-                if(err) {
-                    console.log(err);
-                }
-                else {
-                    alert(name + " updated");
-                }
-            });
-
-            $(ev.currentTarget).val(newQty);
+            sAlert.error("That's not a number...");
         }
     }
 });

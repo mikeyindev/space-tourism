@@ -1,0 +1,6 @@
+{
+  "stripeSecretKey": "sk_live_fx7sR73AQ2CxT340CYsziJTm",
+  "public": {
+    "stripePublicKey": "pk_live_ml1KBJf3Xv7cukzzraxwZme4"
+  }
+}

@@ -1,7 +1,7 @@
 <template name="cartShow">
-  <div class="container">
+  <div class="container" style="padding-top: 30px">
     <div class="row">
-      <div class="col-xs-8">
+      <div class="col-xs-12">
         <div class="panel panel-info">
           <div class="panel-heading">
             <div class="panel-title">
@@ -22,11 +22,13 @@
             {{#each cart.items }}
 
             <div class="row">
-              <div class="col-xs-2"><img class="img-responsive" src="/images/products/{{image}}">
+              <div class="col-xs-2"><img class="img-responsive"
+                                         src="/images/products/{{image}}"
+                                         width="140">
               </div>
               <div class="col-xs-4">
                 <h4 class="product-name"><strong>{{name}}</strong></h4><h4
-              ><small>{{description}}</small></h4>
+              ><small>Product description</small></h4>
               </div>
               <div class="col-xs-6">
                 <div class="col-xs-6 text-right">
@@ -36,7 +38,7 @@
                 <div class="col-xs-4">
                   <!-- Item quantity field -->
                   <input type="text" class="form-control input-sm item-qty"
-                         value="1">
+                         value="{{quantity}}">
                 </div>
                 <div class="col-xs-2">
                   <!-- Remove button -->
@@ -54,12 +56,14 @@
           <div class="panel-footer">
             <div class="row text-center">
               <div class="col-xs-9">
-                <h4 class="text-right">Total <strong>$50.00</strong></h4>
+                <h4 class="text-right">Total <strong>
+                  {{money cart.total}}</strong></h4>
               </div>
               <div class="col-xs-3">
-                <button type="button" class="btn btn-success btn-block">
+                <a type="button" href="{{pathFor 'checkoutShow'}}" class="btn
+                btn-success btn-block">
                   Checkout
-                </button>
+                </a>
               </div>
             </div>
           </div>
