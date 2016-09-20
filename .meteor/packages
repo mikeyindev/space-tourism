@@ -28,10 +28,10 @@ accounts-google
 alanning:roles
 practicalmeteor:mocha
 practicalmeteor:chai
-autopublish
 juliancwirko:s-alert
 meteorhacks:npm
 
 
 npm-container
 mrgalaxy:stripe
+session

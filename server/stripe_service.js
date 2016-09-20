@@ -2,7 +2,6 @@ Meteor.startup(function(){
 
   // Typical Stripe API call using Stripe Node API
   var Stripe = StripeAPI(Meteor.settings.stripeSecretKey);
-  //Stripe.setPublishableKey(Meteor.settings.public.stripePublicKey);
 
   var StripeWrapper = function(){
     //process the charge...

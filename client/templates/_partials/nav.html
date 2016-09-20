@@ -17,7 +17,9 @@
         <li><a href="{{pathFor 'homeAbout'}}">About</a></li>
         <li><a href="{{pathFor 'homeContact'}}">Contact</a></li>
         <li>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+             role="button" aria-expanded="false">Suppliers<span
+                  class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             {{#each vendors}}
               <!-- Running the 'vendors' template helper defined in nav.js -->

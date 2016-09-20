@@ -37,12 +37,12 @@ Template.cartShow.events({
             }
             else {
                 this.quantity = parseInt(newQty);
-                saveCart(currentCart, function (err, res) {
+                updateCart(this.sku, this.quantity, function (err, res) {
                     if (err) {
                         // Using 'juliancwirko:s-alert' package for
                         // notifications
-                        //sAlert.error(err.message);
-                        console.log(err);
+                        sAlert.error(err.message);
+                        //console.log(err);
                     }
                     else {
                         sAlert.success(name + " updated");

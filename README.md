@@ -31,6 +31,8 @@ See the `/templates/main.js` file for examples.
 
 [pg-native](https://www.npmjs.com/package/pg-native) - A slightly nicer interface to Postgres over `node-libq`. Requires Postgres client libraries and tools installed. `brew install postgres postgresql` and also `pg`.
 
+[meteorhacks:fast-render](https://atmospherejs.com/meteorhacks/fast-render) - Improve your app's load time by 2-10 times. It provides the same effect as Server Side Rendering (SSR).  
+
 ## Meteor ([Atmosphere](https://atmospherejs.com/))
  
 [twbs:bootstrap](https://atmospherejs.com/twbs/bootstrap) - Bootstrap.
@@ -49,16 +51,19 @@ See the `/templates/main.js` file for examples.
 
 [juliancwirko:s-alert](https://atmospherejs.com/juliancwirko/s-alert) - Simple notifications/alerts/errors for Meteor
 
+[mrgalaxy:stripe](https://atmospherejs.com/mrgalaxy/stripe) - A Meteor package containing Stripe scripts: `Stripe.js` (for client side), `Stripe Checkout`, and `Stripe for Node.js` (for server side).
+
+[session](https://docs.meteor.com/api/session.html) - This is to prevent `Meteor Session is not defined` error because `Session` is no longer supported by default.
+
 ## Testing
 
 [practicalmeteor:mocha](https://atmospherejs.com/practicalmeteor/mocha) - The recommended package for writing mocha tests for meteor code. `Velocity` framework is no longer supported by Meteor. Don't forget to install `practicalmeteor:chai`!
 * Create a `/test` directory under `/server` and one under `/client`
 * Run `meteor test --full-app --driver-package=practicalmeteor:mocha` to test all `*.app-test.*` and `*.app-spec.*` files.
 
-[mrgalaxy:stripe](https://atmospherejs.com/mrgalaxy/stripe) - A Meteor package containing Stripe scripts: `Stripe.js` (for client side), `Stripe Checkout`, and `Stripe for Node.js` (for server side).
-
 ## Stripe
-The test API keys are stored in `settings.development.json`. Store your API keys in `settings.json`.
+
+The test API keys are stored in `settings.development.json`. Store your API keys in `settings.json`. If you're implementing Stripe on the server side via [Stripe Checkout](https://stripe.com/docs/checkout) or [Stripe Node API](https://stripe.com/docs/api/node#balance_object), you don't need [Stripe.js](https://stripe.com/docs/stripe.js), which is strictly for the client side.
 
 Use `meteor --settings settings.development.json` to tell Meteor to use the settings in it during development. Set it to `settings.json` for production.
 
