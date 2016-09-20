@@ -31,7 +31,23 @@ See the `/templates/main.js` file for examples.
 
 [pg-native](https://www.npmjs.com/package/pg-native) - A slightly nicer interface to Postgres over `node-libq`. Requires Postgres client libraries and tools installed. `brew install postgres postgresql` and also `pg`.
 
-[meteorhacks:fast-render](https://atmospherejs.com/meteorhacks/fast-render) - Improve your app's load time by 2-10 times. It provides the same effect as Server Side Rendering (SSR).  
+[meteor-up](https://github.com/kadirahq/meteor-up) - Command line tool for deploying Meteor app to your own server. 
+* Docker is now the runtime for Meteor Up. No need to setup NodeJS or PhantomJS manually.
+* It uses a mongodb docker container to run the local mongodb data.
+* It uses Nginx
+
+**Meteor Up Setup**
+* Run `npm install -g mup`
+* Then run `mup init` which creates a `mup.js` file
+* After making the necessary changes to the `mup.js` file, run `mup setup` to setup the server for deployment
+* Run `mup deploy` to bundle the Meteor project and deploy to the server
+
+**Other Meteor Up commands**
+* `mup reconfig` - reconfigure app with new environment variables and Meteor settings
+* `mup stop` - stop the app
+* `mup start` - start the app
+* `mup restart` - restart the app
+* `mup logs [-f --tail=50]` - get logs
 
 ## Meteor ([Atmosphere](https://atmospherejs.com/))
  
@@ -55,6 +71,10 @@ See the `/templates/main.js` file for examples.
 
 [session](https://docs.meteor.com/api/session.html) - This is to prevent `Meteor Session is not defined` error because `Session` is no longer supported by default.
 
+[meteorhacks:fast-render](https://atmospherejs.com/meteorhacks/fast-render) - Improve your app's load time by 2-10 times. It provides the same effect as Server Side Rendering (SSR).
+* Unfortunately can't be used in this app due to errors caused by the global variable `userKey`.
+
+
 ## Testing
 
 [practicalmeteor:mocha](https://atmospherejs.com/practicalmeteor/mocha) - The recommended package for writing mocha tests for meteor code. `Velocity` framework is no longer supported by Meteor. Don't forget to install `practicalmeteor:chai`!
@@ -70,3 +90,13 @@ Use `meteor --settings settings.development.json` to tell Meteor to use the sett
 Everything with the label `public` can be viewed by the public, otherwise they're only viewable on the server. 
 
 [Test credit card numbers on Stripe](https://stripe.com/docs/testing#cards)
+
+## Hosting Options
+
+[DigitalOcean](https://www.digitalocean.com/)
+
+[Galaxy](https://www.meteor.com/hosting) - Platform-as-a-service built specifically for Meteor apps by the people at MDG, the guys who brought you Meteor. Built using AWS cloud infrastructure and Docker. 
+
+[Compose](https://www.compose.com/mongodb) - For hosting MongoDB
+
+[Modulus Meteor hosting solution](https://modulus.io/meteor)

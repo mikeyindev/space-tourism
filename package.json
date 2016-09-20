@@ -11,8 +11,6 @@
     "massive": "^2.5.0",
     "meteor-node-stubs": "^0.2.3",
     "moment": "^2.15.0",
-    "pg": "^6.1.0",
-    "pg-native": "^1.10.0",
     "showdown": "^1.4.3"
   }
 }
