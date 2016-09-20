@@ -31,23 +31,8 @@ See the `/templates/main.js` file for examples.
 
 [pg-native](https://www.npmjs.com/package/pg-native) - A slightly nicer interface to Postgres over `node-libq`. Requires Postgres client libraries and tools installed. `brew install postgres postgresql` and also `pg`.
 
-[meteor-up](https://github.com/kadirahq/meteor-up) - Command line tool for deploying Meteor app to your own server. 
-* Docker is now the runtime for Meteor Up. No need to setup NodeJS or PhantomJS manually.
-* It uses a mongodb docker container to run the local mongodb data.
-* It uses Nginx
+[meteor-up](https://github.com/kadirahq/meteor-up) - Command line tool for deploying Meteor app to your own server. See the section on [Meteor Up](#meteor-up) for more information. 
 
-**Meteor Up Setup**
-* Run `npm install -g mup`
-* Then run `mup init` which creates a `mup.js` file
-* After making the necessary changes to the `mup.js` file, run `mup setup` to setup the server for deployment
-* Run `mup deploy` to bundle the Meteor project and deploy to the server
-
-**Other Meteor Up commands**
-* `mup reconfig` - reconfigure app with new environment variables and Meteor settings
-* `mup stop` - stop the app
-* `mup start` - start the app
-* `mup restart` - restart the app
-* `mup logs [-f --tail=50]` - get logs
 
 ## Meteor ([Atmosphere](https://atmospherejs.com/))
  
@@ -100,3 +85,34 @@ Everything with the label `public` can be viewed by the public, otherwise they'r
 [Compose](https://www.compose.com/mongodb) - For hosting MongoDB
 
 [Modulus Meteor hosting solution](https://modulus.io/meteor)
+
+[Demeteorizer](https://github.com/onmodulus/demeteorizer) - CLI tool for converting Meteor app into Node.js app so it can be deployed everywhere Node is supported: Azure, AWS, etc.
+
+## Meteor Up
+
+* Docker is now the runtime for Meteor Up. No need to setup NodeJS or PhantomJS manually.
+* It uses a mongodb Docker container to run the local mongodb data.
+* It uses Nginx
+
+**Meteor Up Setup**
+
+* Run `npm install -g mup`
+* Then run `mup init` which creates a `mup.js` file
+* After making the necessary changes to the `mup.js` file, run `mup setup` to setup the server for deployment
+* Run `mup deploy` to bundle the Meteor project and deploy to the server
+
+**Other Meteor Up commands**
+
+* `mup reconfig` - reconfigure app with new environment variables and Meteor settings
+* `mup stop` - stop the app
+* `mup start` - start the app
+* `mup restart` - restart the app
+* `mup logs [-f --tail=50]` - get logs
+
+* Meteor Up Docker container is started with `--restart=always` flag so it'll respawn if the container dies
+* Logs are maintained via Docker
+* MongoDB is always running as a Docker container. It's bound to port `27017` and can't be accessed from the outside. The database is named appName.
+
+## TODO
+
+Unforunately deploying to DigitalOcean via Meteor Up doesn't work... Exploring other options. 

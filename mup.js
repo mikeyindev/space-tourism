@@ -20,7 +20,7 @@ module.exports = {
     },
     env: {
       ROOT_URL: 'http://45.55.92.224',
-      MONGO_URL: 'mongodb://localhost/meteor'
+      MONGO_URL: 'mongodb://localhost:27017/space-tourism'
     },
 
     // The node inside the default docker image is out-of-date. In case
