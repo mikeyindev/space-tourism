@@ -8,6 +8,8 @@ The technologies used include:
 * Node
 * MongoDB
 
+To deploy locally, run `meteor`.
+
 #Dependencies
 ## NPM
 
